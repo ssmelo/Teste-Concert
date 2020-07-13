@@ -1,0 +1,22 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "name": "Senhor dos Anéis",
+      "author": "Samuel Melo",
+      "publishing": "Concert"
+    },
+    {
+      "id": 2,
+      "name": "O menino e o pé de Laranja",
+      "author": "Sara Melo",
+      "publishing": "Concert"
+    },
+    {
+      "id": 3,
+      "name": "Hilda Furacão",
+      "author": "Carlos Drummond",
+      "publishing": "Concert"
+    }
+  ]
+}

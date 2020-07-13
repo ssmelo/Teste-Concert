@@ -1,0 +1,23 @@
+<ng-container *ngIf="!isLoading; else loading">
+  <div class="container-cont">
+    <app-sidebar></app-sidebar>
+    <div class="wrapper-main">
+      <app-header></app-header>    
+      
+      <app-book-list *ngIf="actualComponent==='list'" (whenUpdate)="navigate($event)" (whenAdd)="navigate($event)"></app-book-list>
+  
+      <app-book-create *ngIf="actualComponent==='create'" (whenCreate)="navigate($event)"></app-book-create>
+  
+      <app-book-update *ngIf="actualComponent==='update'" [bookId]="bookId" (whenUpdate)="navigate($event)"></app-book-update>
+    
+    </div>
+    
+  </div>
+</ng-container>
+
+<ng-template #loading>
+  <div class="flex-column-container">
+    <h1>Loading...</h1>
+    <img src="../../../assets/img/loading.gif" alt="">
+  </div>
+</ng-template>

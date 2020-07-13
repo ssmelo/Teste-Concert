@@ -1,0 +1,7 @@
+#radioForm input, #checkForm input{
+  width: 10%;
+}
+
+#birthdayForm input {
+  width: 20%;
+}

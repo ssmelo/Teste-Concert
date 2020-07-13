@@ -1,0 +1,39 @@
+
+<div class="crud">
+  <h1>Updating book #{{ bookId }}</h1>
+  <form [formGroup]="updateBookForm">        
+    <div class="form-group">
+      <label for="bookName"></label>
+      <input type="text" id="bookName" formControlName="name" placeholder="Book Name">
+      <div *ngIf="formName?.invalid && (formName?.dirty || formName?.touched)" [style.color]="'red'">          
+        <p class="error">Empty field</p>         
+      </div>         
+    </div>
+    
+    <div class="form-group">
+      <label for="authorName"></label>        
+      <input type="text" id="authorName" formControlName="author" placeholder="Author Name">
+      <div *ngIf="formAuthor?.invalid && (formAuthor?.dirty || formAuthor?.touched)" [style.color]="'red'">          
+        <p class="error">Empty field</p>         
+      </div>      
+    </div>
+
+    <div class="form-group">
+      <label for="publishing"></label>        
+      <input type="text" id="publishing" formControlName="publishing" placeholder="Publishing Company">
+      <div *ngIf="formPublishing?.invalid && (formPublishing?.dirty || formPublishing?.touched)" [style.color]="'red'">          
+        <p class="error">Empty field</p>         
+      </div>       
+    </div>
+    
+    <div class="form-group">
+      <input (click) = "updateBook()" type="submit" class="button" name="user" value="Update Book" >
+    </div>
+    
+    <div *ngIf="book" class="success">
+      <p class="success">Success updating book!</p>
+    </div>
+    
+    
+  </form>
+</div>

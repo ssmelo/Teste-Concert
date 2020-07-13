@@ -1,0 +1,15 @@
+.container-cont{
+  display: flex;
+  flex-direction: row;
+}
+
+.crud{
+  padding: 40px 20px;
+  background-color: #fff;
+  flex: 0.8;
+}
+
+.wrapper-main{
+  width: 100%;
+}
+

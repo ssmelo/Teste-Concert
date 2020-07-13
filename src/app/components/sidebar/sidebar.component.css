@@ -1,0 +1,38 @@
+.box{
+  height: 100%;
+  padding: 20px;
+  background-color: #0C1C8C;
+  position: sticky; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  overflow-x: hidden;
+}
+
+h1{
+  color: #fff;
+  padding: 10px;
+  border-bottom: 1px solid #fff;
+}
+
+ul{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ul li{
+  width: 100%;
+  border-bottom: 1px solid #fff;
+}
+
+ul li a{
+  display: block;
+  padding: 5px;
+  text-align: center;
+}
+
+ul li a:hover{
+  color: #0C1C8C;
+  background-color: #fff;
+}

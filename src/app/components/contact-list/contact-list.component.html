@@ -1,0 +1,37 @@
+<div class="crud">        
+  <input (click) = "emitAdd()" type="submit" class="button" value="Add a contact">
+  <table class="table mt-3">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Cellphone</th>
+        <th scope="col">Email</th>
+        <th scope="col">Age</th>
+        <th scope="col">Profession</th>
+        <th scope="col">Best Friend</th>
+        <th scope="col">Birthday</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of responseContacts">
+        <th scope="row">{{ contact.id }}</th>
+        <td>{{ contact.name }}</td>
+        <td>{{ contact.cellphone }}</td>
+        <td>{{ contact.email }}</td>
+        <td>{{ contact.age }}</td>
+        <td>{{ contact.professions }}</td>
+        <td *ngIf="contact.bestFriend===false; else yes">No</td>
+        <ng-template #yes>
+          <td>Yes</td>
+        </ng-template>
+        <td>{{ contact.birthday }}</td>
+        <td><a (click) = "emitUpdate(contact.id)" [routerLink] = "['/contacts']"><mat-icon aria-hidden="false" color="accent" aria-label="create icon">create</mat-icon></a></td>
+        <td><a (click) = "deleteContact(contact)" [routerLink] = "['/contacts']"><mat-icon aria-hidden="false" color="warn" aria-label="create icon">delete</mat-icon></a></td>
+      </tr>   
+      
+    </tbody>
+  </table>
+</div>

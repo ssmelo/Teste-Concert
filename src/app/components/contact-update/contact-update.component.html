@@ -1,0 +1,57 @@
+<div class="crud">
+  <h1>Updating contact #{{ contactId }}</h1>
+  <form [formGroup] = "updateContactForm">        
+    <div class="form-group">
+      <label for="contactName"></label>
+      <input type="text" id="contactName" formControlName="name" placeholder="Contact Name">      
+    </div>
+    
+    <div class="form-group">
+      <label for="contactNumber"></label>        
+      <input type="text" id="contactNumber" formControlName="cellphone" placeholder="Cellphone">      
+    </div>
+
+    <div class="form-group">
+      <label for="email"></label>        
+      <input type="email" id="email" formControlName="email" placeholder="Email">      
+    </div>
+    <div id="radioForm" class="form-group">
+      <label for="age">Age:</label><br>
+      <div name="age">
+        <input type="radio" id="age1" name="age" value="30" formControlName="age">
+        <label for="age1">0 - 30</label><br>
+        <input type="radio" id="age2" name="age" value="60" formControlName="age">
+        <label for="age2">31 - 60</label><br> 
+        <input type="radio" id="age3" name="age" value="100" formControlName="age">
+        <label for="age3">61 - 100</label><br> 
+      </div>
+          
+    </div>
+    <div id="checkForm" class="form-group">
+      <label for="bestFriend"> Best friend? </label>
+      <input type="checkbox" id="bestFriend" name="bestFriend" value="Bike" formControlName="bestFriend">                     
+    </div>
+    <div class="form-group">
+      <label for="professions">Profession:</label><br>
+      <select name="professions" id="professions" formControlName="professions">
+        <option value="engenineer" name="engineer" >Engineer</option>
+        <option value="doctor" >Doctor</option>
+        <option value="lawyer" >Lawyer</option>
+        <option value="other" >Other</option>
+      </select>             
+    </div>
+    <div id="birthdayForm" class="form-group">
+      <label for="day">Birhday: </label><br>
+      <input type="date" id="day" name="day"  formControlName="birthday">              
+    </div>   
+    
+    <div class="form-group">
+      <input (click) = "updateContact()" type="submit" class="button" name="user" value="Update contact" >
+    </div>   
+    
+  </form>
+
+  <div *ngIf="contact" class="success">
+    <p class="success">Success updating contact!</p>
+  </div>
+</div>

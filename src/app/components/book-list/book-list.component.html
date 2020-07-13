@@ -1,0 +1,28 @@
+
+
+<div class="crud">        
+  <input (click) = "emitAdd()"type="submit" class="button" value="Add a book">
+  <table class="table mt-3">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Author</th>
+        <th scope="col">Publishing</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of responseBooks">
+        <th scope="row">{{ book.id }}</th>
+        <td>{{ book.name }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.publishing }}</td>
+        <td><a (click) = "emitUpdate(book.id)" [routerLink] = "['/books']"><mat-icon aria-hidden="false" color="accent" aria-label="create icon">create</mat-icon></a></td>
+        <td><a (click) = "deleteBook(book)" [routerLink] = "['/books']"><mat-icon aria-hidden="false" color="warn" aria-label="create icon">delete</mat-icon></a></td>
+      </tr>    
+      
+    </tbody>
+  </table>
+</div>

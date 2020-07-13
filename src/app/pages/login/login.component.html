@@ -1,0 +1,42 @@
+<ng-container *ngIf="!isLoading; else loading">
+  <div class="body-wrapper">
+    <div id ="login" class="container">
+      <div class="login-card">
+        <h1>Login</h1>
+        <form [formGroup]="loginForm">        
+          <div class="form-group">
+            <input type="text" id="username" formControlName="username" placeholder="Username">
+            <div *ngIf="formUsername?.invalid && (formUsername?.dirty || formUsername?.touched)" [style.color]="'red'">          
+              <p class="error">Empty field</p>         
+            </div>
+          </div>
+          
+          <div class="form-group">        
+            <input type="password" id="name" formControlName="password" placeholder="Password">
+            <div *ngIf="formPassword?.invalid && (formPassword?.dirty || formPassword?.touched)" [style.color]="'red'">          
+              <p class="error">Empty field</p>          
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <input (click)="login()" type="submit" class="button" name="user" value="Login" >
+          </div>        
+          
+        </form>
+    
+        <div *ngIf="!matchData">
+          <p class="error">Username or password are incorrect</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #loading>
+  <div class="flex-column-container">
+    <h1>Loading...</h1>
+    <img src="../../../assets/img/loading.gif" alt="">
+  </div>
+</ng-template>
+
+

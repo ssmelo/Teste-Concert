@@ -1,0 +1,26 @@
+<ng-container *ngIf="!isLoading; else loading">
+  <div class="container-cont">
+    <app-sidebar></app-sidebar>
+    <div class="wrapper-main">
+      <app-header></app-header>
+      
+      <app-contact-list *ngIf="actualComponent==='list'" (whenUpdate)="navigate($event)" (whenAdd)="navigate($event)"></app-contact-list>
+  
+      <app-contact-create *ngIf="actualComponent==='create'" (whenCreate)="navigate($event)"></app-contact-create>
+  
+      <app-contact-update *ngIf="actualComponent==='update'" [contactId]="contactId" (whenUpdate)="navigate($event)"></app-contact-update>
+      
+    
+    </div>
+    
+  </div>
+</ng-container>
+
+<ng-template #loading>
+  <div class="flex-column-container">
+    <h1>Loading...</h1>
+    <img src="../../../assets/img/loading.gif" alt="">
+  </div>
+</ng-template>
+
+
