@@ -1,8 +1,11 @@
 # AppConcert
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.1.
+
 O PROJETO EM QUESTÃO FOI DESENVOLVIDO PARA O TESTE DA CONCERT TECHNOLOGIES. PARA UTILIZAR AS ROTAS DO BACK-END FICTICIO, É NECESSÁRIO RODAR: json-server --watch src/app/data/db.json
+
 PARA ABRIR O APP NO NAVEGADOR DEVERÁ TAMBÉM SER NECESSÁRIO A SEGUINTE INSTRUÇÃO NO TERMINAL DO REPOSITÓRIO: ng serve --open
+
 PARA ACESSAR O LOGIN: username: concert, password: prova
 
 ## Development server
